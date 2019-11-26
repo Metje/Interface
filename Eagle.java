@@ -3,25 +3,16 @@ package com.wilders.ICanFly;
 public class Eagle extends Bird implements Fly {
 	private int altitude;
 	private boolean flying;
-	private String name;
+	
 
 	// constructor
 	public Eagle(String name) {
 		super(name);
-		this.name = name;
 		this.flying = false;
 		this.altitude = 0;
 	}
 
 	// Getters + Setters
-	public String getsName() {
-		return name;
-	}
-
-	public void setsName(String sName) {
-		this.name = sName;
-	}
-
 	public int getAltitude() {
 		return altitude;
 	}
@@ -39,13 +30,13 @@ public class Eagle extends Bird implements Fly {
 
 	@Override
 	public void takeOff() {
-		System.out.println(this.name + " takes off in the sky.");
+		System.out.println(this.getName() + " takes off in the sky.");
 	};
 
 	@Override
 	public int ascend(int meters) {
 		this.altitude += meters;
-		System.out.println(this.name + " flies upward, altitude: " + this.altitude);
+		System.out.println(this.getName() + " flies upward, altitude: " + this.altitude);
 		return this.altitude; // aktuelle Flughöhe
 	}
 
@@ -56,16 +47,16 @@ public class Eagle extends Bird implements Fly {
 		else
 			this.altitude = 0;
 
-		System.out.println(this.name + " flies downward, altitude: " + this.altitude);
+		System.out.println(this.getName() + " flies downward, altitude: " + this.altitude);
 		return this.altitude; // aktuelle Flughöhe
 	};
 
 	@Override
 	public void land() {
 		if (this.altitude >= 10)
-			System.out.println(this.name + " is too high, it can't land.");
+			System.out.println(this.getName() + " is too high, it can't land.");
 		else
-			System.out.println(this.name + " lands on the ground.");
+			System.out.println(this.getName() + " lands on the ground.");
 	};
 
 }
